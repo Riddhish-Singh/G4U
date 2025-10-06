@@ -1076,5 +1076,180 @@ html.dark .brand-sub { color: var(--text-secondary); }
 })();
 
   </script>
+
+
+<script>
+// PRODUCTS data (candles only) - added by assistant
+window.PRODUCTS = [
+  { id: 'c001', title: 'Scented Floating Flower Candle', price: 699, stock: 25, desc: 'A decorative floating candle shaped like a flower with a soothing floral scent. Perfect for centerpieces and baths.', rating: 4.7 },
+  { id: 'c002', title: 'Lavender Fields Jar Candle', price: 549, stock: 40, desc: 'Classic lavender-scented jar candle for relaxation and sleep.', rating: 4.6 },
+  { id: 'c003', title: 'Sandalwood & Musk Large Jar', price: 1099, stock: 18, desc: 'Warm sandalwood blended with musk in a premium large jar.', rating: 4.8 },
+  { id: 'c004', title: 'Citrus Zest Votive Set (3 pcs)', price: 799, stock: 60, desc: 'Bright citrus-scented votive candles sold as a set of 3.', rating: 4.5 },
+  { id: 'c005', title: 'Vanilla Bean Pillar Candle', price: 649, stock: 30, desc: 'Creamy vanilla aroma in a long-burning pillar candle.', rating: 4.4 },
+  { id: 'c006', title: 'Rose Petal Floating Candle', price: 749, stock: 20, desc: 'Romantic rose-shaped floating candle, hand-poured with delicate fragrance.', rating: 4.6 },
+  { id: 'c007', title: 'Eucalyptus Mint Tea Light Pack (6)', price: 399, stock: 120, desc: 'Refreshing eucalyptus and mint tea lights — great for relaxation and spa nights.', rating: 4.3 },
+  { id: 'c008', title: 'Autumn Spice Pumpkin Candle', price: 599, stock: 35, desc: 'Cozy autumn spice blend with pumpkin notes—limited seasonal favorite.', rating: 4.5 },
+  { id: 'c009', title: 'Ocean Breeze Cylinder Candle', price: 899, stock: 22, desc: 'Fresh sea-spray scent in an elegant cylinder shape.', rating: 4.6 },
+  { id: 'c010', title: 'Coffee Roast Espresso Candle', price: 699, stock: 27, desc: 'Rich coffee aroma for coffee lovers—notes of espresso and roasted beans.', rating: 4.7 }
+];
+</script>
+
+
+<script id="rs-products">
+// PRODUCTS data (candles only) - added by assistant
+window.PRODUCTS = [
+  { id: 'c001', title: 'Scented Floating Flower Candle', price: 699, stock: 25, desc: 'Decorative floating flower-shaped candle with calming floral notes.', rating: 4.7 },
+  { id: 'c002', title: 'Lavender Fields Jar Candle', price: 549, stock: 40, desc: 'Classic lavender-scented jar candle for relaxation and sleep.', rating: 4.6 },
+  { id: 'c003', title: 'Sandalwood & Musk Large Jar', price: 1099, stock: 18, desc: 'Warm sandalwood blended with musk in a premium large jar.', rating: 4.8 },
+  { id: 'c004', title: 'Citrus Zest Votive Set (3 pcs)', price: 799, stock: 60, desc: 'Bright citrus-scented votive candles sold as a set of 3.', rating: 4.5 },
+  { id: 'c005', title: 'Vanilla Bean Pillar Candle', price: 649, stock: 30, desc: 'Creamy vanilla aroma in a long-burning pillar candle.', rating: 4.4 },
+  { id: 'c006', title: 'Rose Petal Floating Candle', price: 749, stock: 20, desc: 'Romantic rose-shaped floating candle, hand-poured with delicate fragrance.', rating: 4.6 },
+  { id: 'c007', title: 'Eucalyptus Mint Tea Light Pack (6)', price: 399, stock: 120, desc: 'Refreshing eucalyptus and mint tea lights — great for relaxation and spa nights.', rating: 4.3 },
+  { id: 'c008', title: 'Autumn Spice Pumpkin Candle', price: 599, stock: 35, desc: 'Cozy autumn spice blend with pumpkin notes—limited seasonal favorite.', rating: 4.5 },
+  { id: 'c009', title: 'Ocean Breeze Cylinder Candle', price: 899, stock: 22, desc: 'Fresh sea-spray scent in an elegant cylinder shape.', rating: 4.6 },
+  { id: 'c010', title: 'Coffee Roast Espresso Candle', price: 699, stock: 27, desc: 'Rich coffee aroma for coffee lovers—notes of espresso and roasted beans.', rating: 4.7 }
+];
+</script>
+
+<!-- START: RS Chatbot - selection-only, no typing required -->
+<style>
+  #rsChat { position: fixed; right: 20px; bottom: 20px; width: 360px; max-width: calc(100% - 40px); border-radius: 14px; box-shadow: 0 12px 30px rgba(11,18,32,0.18); overflow: hidden; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; z-index: 9999; }
+  #rsChat .header { background: linear-gradient(90deg, #0b63ff, #ff6a00); color: #fff; padding: 10px 12px; display:flex; align-items:center; gap:8px; }
+  #rsChat .body { background: #ffffff; color: #111827; max-height: 420px; overflow:auto; padding:12px; }
+  #rsChat .msg { margin-bottom:10px; display:flex; gap:8px; align-items:flex-start; }
+  #rsChat .msg.user .bubble { background:#111827; color:#fff; margin-left:auto; border-bottom-right-radius:4px; }
+  #rsChat .msg.bot .bubble { background: #f3f4f6; color:#111827; }
+  #rsChat .options { display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+  #rsChat .options button, #rsChat .options a.button-link { padding:10px 12px; border-radius:10px; border:1px solid rgba(0,0,0,0.06); background:#f8fafc; cursor:pointer; text-align:left; font-weight:700; text-decoration:none; color:inherit; display:block; }
+  #rsChat-toggle { position: fixed; right: 20px; bottom: 20px; width:56px; height:56px; border-radius:999px; background:linear-gradient(90deg,#0b63ff,#ff6a00); color:white; display:flex; align-items:center; justify-content:center; z-index:9998; box-shadow:0 10px 25px rgba(11,18,32,0.18); cursor:pointer; }
+  @media (max-width:420px){ #rsChat { width: 92%; right:4%; bottom:80px; } }
+  .bubble strong{ font-weight:800; }
+</style>
+
+<div id="rsChat-toggle" title="Open chat">💬</div>
+<div id="rsChat" style="display:none;" role="dialog" aria-label="GI Candles assistant">
+  <div class="header"><div style="font-weight:800">GI Candles Assistant</div><button id="rsClose" style="margin-left:auto;background:none;border:none;color:#fff;font-size:18px;cursor:pointer;">✖</button></div>
+  <div class="body" id="rsChatBody" aria-live="polite">
+    <div class="msg bot"><div class="bubble">Hi — tap a question below. After each answer the remaining questions will appear. Need more? Tap <strong>Another question</strong>.</div></div>
+    <div id="rsOptions" class="options"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const WA_LINK = (window.RS_CHATBOT_CONFIG && window.RS_CHATBOT_CONFIG.wa_link) || 'https://wa.me/916280096796';
+  const QUESTIONS = [
+    {
+      id: 'q_price_scented',
+      label: 'What is the price of a scented candle?',
+      answer: 'Our scented candles range from <strong>₹499</strong> (small) to <strong>₹1,299</strong> (premium large jar). Most popular sizes are ₹499, ₹799 and ₹1,099.'
+    },
+    {
+      id: 'q_availability',
+      label: 'Is the scented candle available?',
+      answer: 'Most of our popular fragrances are in stock. If an item is sold out, it usually restocks within 7–10 days. Want us to check a specific fragrance? Hit "Another question".'
+    },
+    {
+      id: 'q_shipping_time',
+      label: 'What is the shipping time?',
+      answer: 'Standard shipping takes <strong>3–6 business days</strong>. Express shipping (where available) takes 1–2 business days.'
+    },
+    {
+      id: 'q_discounts',
+      label: 'Do you offer discounts or bundles?',
+      answer: 'Yes! We run bundle discounts (e.g., 3 candles for 15% off) and seasonal promos. Sign up to the newsletter or ask via WhatsApp for current offers.'
+    }
+  ];
+
+  const toggle = document.getElementById('rsChat-toggle');
+  const chat = document.getElementById('rsChat');
+  const body = document.getElementById('rsChatBody');
+  const opts = document.getElementById('rsOptions');
+
+  let asked = new Set();
+
+  function renderOptions(){
+    opts.innerHTML = '';
+    const remaining = QUESTIONS.filter(q => !asked.has(q.id));
+    if(remaining.length === 0){
+      // All asked: show restart and Another question
+      const restart = document.createElement('button');
+      restart.textContent = 'Restart questions';
+      restart.addEventListener('click', ()=>{ asked.clear(); appendBot('Alright — questions restarted.'); renderOptions(); });
+      opts.appendChild(restart);
+    } else {
+      remaining.forEach(q => {
+        const btn = document.createElement('button');
+        btn.textContent = q.label;
+        btn.dataset.qid = q.id;
+        btn.addEventListener('click', ()=>{
+          // show user selection
+          appendUser(q.label);
+          // show bot answer
+          setTimeout(()=> appendBot(q.answer), 200);
+          // mark asked and re-render after a short delay
+          asked.add(q.id);
+          setTimeout(renderOptions, 300);
+        });
+        opts.appendChild(btn);
+      });
+    }
+    // Always include "Another question" as last option (WhatsApp)
+    const another = document.createElement('a');
+    another.href = WA_LINK;
+    another.target = '_blank';
+    another.rel = 'noopener noreferrer';
+    another.className = 'button-link';
+    another.textContent = 'Another question';
+    opts.appendChild(another);
+  }
+
+  function appendBot(html){
+    const el = document.createElement('div');
+    el.className = 'msg bot';
+    const b = document.createElement('div');
+    b.className = 'bubble';
+    b.innerHTML = html;
+    el.appendChild(b);
+    // insert before options container
+    body.insertBefore(el, opts);
+    body.scrollTop = body.scrollHeight;
+  }
+  function appendUser(text){
+    const el = document.createElement('div');
+    el.className = 'msg user';
+    const b = document.createElement('div');
+    b.className = 'bubble';
+    b.textContent = text;
+    el.appendChild(b);
+    body.insertBefore(el, opts);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  toggle.addEventListener('click', ()=>{
+    const open = chat.style.display === 'block';
+    chat.style.display = open ? 'none' : 'block';
+    toggle.style.display = open ? 'flex' : 'none';
+    if(!open) renderOptions();
+  });
+
+  // open on load? keep closed by default
+  renderOptions();
+
+  
+  const closeBtn = document.getElementById('rsClose');
+  if(closeBtn){
+    closeBtn.addEventListener('click', ()=>{
+      chat.style.display = 'none';
+      toggle.style.display = 'flex';
+    });
+  }
+
+  // Expose helper
+  window.RSChat = { open: ()=>{ chat.style.display='block'; toggle.style.display='none'; renderOptions(); } };
+})();
+</script>
+<!-- END: RS Chatbot -->
+
 </body>
 </html>
