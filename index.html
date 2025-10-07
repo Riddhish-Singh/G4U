@@ -213,7 +213,7 @@ html.dark .brand-sub { color: var(--text-secondary); }
 <a class="flex items-center gap-3 logo-link" href="#home" aria-label="GI Candles home">
   <!-- Badge-style logo (use high-res PNG or ideally an SVG) -->
   <div class="logo-badge" aria-hidden="true">
-    <img src="logo.png" alt="GI Candles logo" id="siteLogo" class="logo-img">
+    <img src="file:///C:/Users/Riddhish/Desktop/G4U/logo.png" alt="GI Candles logo" id="siteLogo" class="logo-img">
   </div>
 
   <!-- Brand name (hidden on xs for clean header) -->
@@ -1050,7 +1050,7 @@ html.dark .brand-sub { color: var(--text-secondary); }
     if(!logo) return;
     const dark = document.documentElement.classList.contains('dark');
     const darkSrc = 'logo-dark.png';   // add this file for dark theme
-    const lightSrc = 'logo.png';
+    const lightSrc = 'file:///C:/Users/Riddhish/Desktop/G4U/logo.png';
     // prefer dark file if exists - fallback will show broken image if missing, so we test by fetching small HEAD might be overkill.
     // We'll attempt to set dark; if it 404s, browser will ignore — so keep files in your project.
     logo.src = dark ? darkSrc : lightSrc;
