@@ -281,7 +281,7 @@ html.dark .brand-sub { color: var(--text-secondary); }
   function updateWorldImage() {
     const img = document.getElementById('world-showcase-img');
     const isDark = document.documentElement.classList.contains('dark');
-    img.src = isDark ? 'world.png' : 'world-l.png';
+    img.src = isDark ? 'world.png' : 'candle.png';
   }
 
   // Run on load
@@ -290,6 +290,29 @@ html.dark .brand-sub { color: var(--text-secondary); }
   // Observe theme changes
   const observer = new MutationObserver(updateWorldImage);
   observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.slider-nav .prev');
+        const nextBtn = document.querySelector('.slider-nav .next');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function showSlide(n) {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+            });
+            slides[n].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
 </script>
 
         </div>
